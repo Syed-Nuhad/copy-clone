@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>V-Tools - Auto Achat Vinted</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    /* Navbar Styles */
+    .navbar {
+        background-color: #ffffff;
+        padding: 1rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #181818;
+    }
+    .navbar-brand:hover {
+        color: #181818;
+    }
+    .nav-link {
+        color: #181818;
+        font-size: 1rem;
+        margin-right: 1.5rem;
+    }
+    .nav-link:hover {
+        color: #5865f2;
+    }
+    .btn-primary {
+        background-color: #5865f2;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 0.4rem;
+    }
+    .btn-primary:hover {
+        background-color: #4551c6;
+    }
+
+    /* Hero Section Styles */
+    .hero-section {
+        background-color: #f8f9fb;
+        padding: 6rem 1rem;
+    }
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #181818;
+    }
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .features-section {
+        background-color: #fff;
+    }
+    .features-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #181818;
+    }
+    .features-subtitle {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .feature-card {
+        background-color: #f8f9fb;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+    .feature-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #181818;
+        margin-bottom: 0.75rem;
+    }
+    .feature-description {
+        color: #555;
+        font-size: 1rem;
+    }
+    .pricing-section {
+        background-color: #f8f9fb;
+    }
+    .pricing-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #181818;
+    }
+    .pricing-subtitle {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .pricing-card {
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .plan-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #181818;
+        margin-bottom: 1rem;
+    }
+    .plan-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #5865f2;
+    }
+    .plan-period {
+        font-size: 1rem;
+        color: #555;
+        margin-left: 0.2rem;
+    }
+    .plan-features li {
+        margin: 0.5rem 0;
+        color: #555;
+        font-size: 1rem;
+    }
+    .popular-plan {
+        border: 2px solid #5865f2;
+    }
+
+
+    .footer-section {
+        background-color: #fff;
+        border-top: 1px solid #e5e5e5;
+    }
+    .footer-logo h4 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #181818;
+    }
+    .footer-links a {
+        color: #181818;
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        text-decoration: none;
+    }
+    .footer-links a:hover {
+        color: #5865f2;
+    }
+    .footer-text {
+        color: #555;
+        font-size: 0.95rem;
+    }
+
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">V-Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary" href="{% url 'accounts:logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{% url 'accounts:login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Hero Section-->
+
+<section class="hero-section d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="hero-title">The Fastest Auto-Buy Tool for Vinted</h1>
+        <p class="hero-subtitle mt-3">Buy your favorite items instantly with filters and real-time feed. No delays. No compromises.</p>
+        <a href="#" class="btn btn-primary mt-4">Get Started</a>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="features-section py-5">
+    <div class="container text-center">
+        <h2 class="features-title mb-4">Why Choose V-Tools?</h2>
+        <p class="features-subtitle mb-5">Powerful, fast, and designed for serious Vinted resellers.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card p-4 h-100">
+                    <h5 class="feature-title">Real-Time Feed</h5>
+                    <p class="feature-description">Instantly see matching Vinted items with 0 delay, faster than any competitor.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card p-4 h-100">
+                    <h5 class="feature-title">AutoBuy & AutoCop</h5>
+                    <p class="feature-description">Activate AutoBuy or AutoCop and never miss the perfect deal — fully automated.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card p-4 h-100">
+                    <h5 class="feature-title">Custom Filters</h5>
+                    <p class="feature-description">Set filters by category, keywords, and price. Target exactly what you want.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Pricing Section -->
+<section class="pricing-section py-5">
+    <div class="container text-center">
+        <h2 class="pricing-title mb-4">Simple, Transparent Pricing</h2>
+        <p class="pricing-subtitle mb-5">Choose the plan that suits your needs. Cancel anytime.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="pricing-card p-4 h-100">
+                    <h5 class="plan-title">Basic</h5>
+                    <p class="plan-price">€9.99<span class="plan-period">/month</span></p>
+                    <ul class="plan-features list-unstyled">
+                        <li>Real-time feed</li>
+                        <li>Basic filters</li>
+                        <li>Manual purchases</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary w-100 mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="pricing-card p-4 h-100 popular-plan">
+                    <h5 class="plan-title">Pro</h5>
+                    <p class="plan-price">€19.99<span class="plan-period">/month</span></p>
+                    <ul class="plan-features list-unstyled">
+                        <li>Real-time feed</li>
+                        <li>Advanced filters</li>
+                        <li>AutoBuy & AutoCop</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary w-100 mt-3">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="pricing-card p-4 h-100">
+                    <h5 class="plan-title">Enterprise</h5>
+                    <p class="plan-price">Custom</p>
+                    <ul class="plan-features list-unstyled">
+                        <li>All Pro features</li>
+                        <li>Dedicated support</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary w-100 mt-3">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
