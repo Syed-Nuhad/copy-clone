@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>V-Tools Landing Clone</title>
+  <title>SwiftCop Landing Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
   />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <style>
     * {
       margin: 0;
@@ -135,20 +138,37 @@
     }
 
     .btn-group a {
-      text-decoration: none;
       display: inline-block;
       padding: 12px 28px;
       margin-right: 15px;
       font-weight: 600;
       border-radius: 8px;
-      background: #15dea5;
-      color: #111;
-      transition: background 0.3s, color 0.3s;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
     }
 
-    .btn-group a:hover {
+    /* Primary button */
+    .btn-primary {
+      background: #15dea5;
+      color: #111;
+    }
+
+    .btn-primary:hover {
       background: #0ea686;
       color: #fff;
+    }
+
+    /* Outline button like Bootstrap's btn-outline-light */
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: #111;
     }
 
     .hero-image {
@@ -380,12 +400,62 @@
       }
     }
 
+    .community-text {
+      flex: 1;
+      color: #eee;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
     .icon-wrapper {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      color: white;
       margin-bottom: 20px;
+      display: inline-block;
       animation: popIn 0.6s ease forwards;
       opacity: 0;
       transform: scale(0.8);
+    }
+
+    .community-text h2 {
+      font-size: 2rem;
+      color: #15dea5;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .community-text p {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .cta-btn {
+      background: #15dea5;
+      color: #111;
+      padding: 12px 24px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: #0ea686;
+      color: #fff;
+    }
+
+    .cta-btn i {
+      margin-left: 10px;
+      transition: transform 0.3s;
+    }
+
+    .cta-btn:hover i {
+      transform: translateX(5px);
     }
 
     @keyframes popIn {
@@ -431,31 +501,8 @@
       line-height: 1.6;
     }
 
-    .btn-sniper {
-      display: inline-block;
-      background: #15dea5;
-      color: #111;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
 
-    .btn-sniper:hover {
-      background: #0ea686;
-      color: #fff;
-    }
 
-    .click-icon {
-      background: #222;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      display: inline-block;
-      color: #15dea5;
-    }
 
     /* Right Card */
     .sniper-card {
@@ -530,14 +577,6 @@
       color: #999;
     }
 
-    .footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      margin-top: 15px;
-    }
-
     .details-btn {
       background: #222;
       color: #eee;
@@ -589,6 +628,213 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .sniper-text
+    .community-2-image{
+      margin-top: 40px;
+      text-align: center;
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+
+
+
+
+.sniper-section {
+  padding: 100px 0;
+  background: #111;
+}
+
+.sniper-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.sniper-text {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInLeft 0.8s ease forwards;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.click-icon {
+  font-size: 2.5rem;
+  color: #15dea5;
+  margin-bottom: 20px;
+}
+
+.sniper-text h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.sniper-text p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn-sniper {
+  background: #15dea5;
+  color: #111;
+  padding: 10px 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: fit-content;   /* ✅ only as wide as needed */
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.btn-sniper:hover {
+  background: #0ea686;
+  color: #fff;
+}
+
+.btn-sniper i {
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.btn-sniper:hover i {
+  transform: translateX(5px);
+}
+
+.sniper-image {
+  flex: 1;
+  animation: fadeInRight 0.8s ease forwards;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.sniper-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(21, 222, 165, 0.3);
+}
+
+/* Fade Animations */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sniper-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sniper-text,
+  .sniper-image {
+    animation: fadeInUp 0.8s ease forwards;
+    transform: translateY(30px);
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+.click-icon {
+  font-size: 2.5rem;
+  color: #15dea5;
+  margin-bottom: 20px;
+  display: inline-block;
+  background: none;       /* remove bg */
+  padding: 0;              /* no padding */
+  border-radius: 0;        /* no border radius */
+  box-shadow: none;        /* no shadow */
+}
+
+
+
+
+
+  @keyframes borderAnim {
+    0% {
+      border-image-source: linear-gradient(270deg, #00ff73, #00cc66, #00ff73);
+      background-position: 0% 50%;
+    }
+    50% {
+      border-image-source: linear-gradient(270deg, #00cc66, #00ff73, #00cc66);
+      background-position: 100% 50%;
+    }
+    100% {
+      border-image-source: linear-gradient(270deg, #00ff73, #00cc66, #00ff73);
+      background-position: 0% 50%;
+    }
+  }
+
+
+
+
+/* Remove padding between cards and align them perfectly */
+.col-lg-3, .col-md-4 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+}
+
+/* Apply negative margin to remove the gap between cards */
+.card {
+    margin-right: -1px;  /* Remove right margin on Performance card */
+    margin-left: -1px;   /* Remove left margin on Sniper card */
+    height: calc(100% + 300px); /* Increase height by 30px */
+}
+
+/* Add height to card bodies */
+.card-body {
+    padding: 20px;
+    height: 100%;
+}
+.btn-custom {
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      background: #15dea5;
+      color: #111;
+}
+
+.btn-custom:hover {
+    background-color: #057c4b ;  /* Darken the background color when hovering */
+}
+
+        /* Remove shadow from accordion buttons */
+        .accordion-button {
+            box-shadow: none !important; /* Remove shadow */
+        }
+
+        /* Remove shadow when accordion button is focused */
+        .accordion-button:focus {
+            box-shadow: none !important; /* Remove focus shadow */
+            outline: none; /* Remove the outline as well */
+        }
+
+        /* Remove the active shadow for accordion buttons */
+        .accordion-button:not(.collapsed) {
+            box-shadow: none !important; /* Remove active state shadow */
+        }
   </style>
 </head>
 <body>
@@ -619,8 +865,8 @@
       <h1>The ultimate tool for Vinted reselling</h1>
       <p>Save time, make money, and automate your sales with our intelligent platform.</p>
       <div class="btn-group">
-        <a href="#">Get Started</a>
-        <a href="#">Discover</a>
+        <a href="#" class="btn-primary">Get Started</a>
+        <a href="#" class="btn-outline">Discover</a>
       </div>
     </div>
     <div class="hero-image">
@@ -676,17 +922,19 @@
 
       <!-- Right: Text -->
    <!-- Right: Text with Features Icon -->
-        <div class="community-text">
-        <div class="icon-wrapper">🛠</div>
-        <h2>Access the number 1 reseller community in France 🇫🇷</h2>
-        <p>
-            V-Tools is the fastest and most reliable tool on the market, used and recommended by top resellers.
+       <div class="community-text">
+          <div class="icon-heading">
+            <div class="icon-wrapper">🛠</div>
+            <h2>Access the number 1 reseller community in France 🇫🇷</h2>
+          </div>
+          <p>
+            SwiftCop is the fastest and most reliable tool on the market, used and recommended by top resellers.
             Some of our members already generate over <strong>€20,000</strong> in revenue per month.
-        </p>
-        <p>
-            By joining V-Tools, you'll gain access to our exclusive community channels and be directly connected
+          </p>
+          <p>
+            By joining SwiftCop, you'll gain access to our exclusive community channels and be directly connected
             to all our users, allowing you to connect, network, and grow.
-        </p>
+          </p>
         </div>
 
 
@@ -702,36 +950,309 @@
     <div class="sniper-text">
       <i class="fas fa-mouse-pointer click-icon"></i>
       <h2>Don't miss any more articles!</h2>
-      <p>Don’t let your competitors buy the best parts anymore. Our Sniper and AutoCop tools are the fastest on the market and guarantee you’ll never miss out on the best parts again. With V-tools, you'll always be the first to acquire the best parts.</p>
-      <a href="#" class="btn-sniper">Join V-tools <i class="fas fa-arrow-right"></i></a>
+      <p>
+        Don’t let your competitors buy the best parts anymore. Our Sniper and AutoCop tools are the fastest on the market and
+        guarantee you’ll never miss out on the best parts again. With SwiftCop, you'll always be the first to acquire the best parts.
+      </p>
+      <a href="#" class="btn-sniper">Join SwiftCop <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <!-- Right: Card -->
-    <div class="sniper-card">
-      <img src="https://via.placeholder.com/300x300" alt="Product" />
-      <div class="product-info">
-        <span class="label">STONE ISLAND - L</span>
-        <h3>Stone Island Pullover</h3>
-        <div class="author">
-          <img src="https://via.placeholder.com/30" alt="Author" />
-          <span>Jack Johnson</span>
-          <span class="stars">
-            ★★★★★ <small>(122)</small>
-          </span>
-        </div>
-        <span class="condition">Good Condition</span>
-        <div class="price">€32.00 <small>(= €37.12)</small></div>
-        <div class="footer">
-          <span class="timestamp">44 minutes ago</span>
-          <button class="details-btn">Details</button>
-          <span class="sniped"><i class="fas fa-crosshairs"></i> Sniped</span>
-        </div>
-      </div>
+    <!-- Right: Image -->
+    <div class="sniper-image">
+      <img src="https://framerusercontent.com/images/BdfR9PaI7U7ec7LTsbgh7dbOluc.png?scale-down-to=2048" alt="Sniper Feature Image" />
     </div>
 
   </div>
 </section>
 
+<section class="features-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Discover Our Features</h2>
+
+    <div class="d-flex justify-content-center mb-4">
+      <button class="btn btn-outline-primary mx-2 active" id="sellersBtn">Sellers</button>
+      <button class="btn btn-outline-primary mx-2" id="buyersBtn">Buyers</button>
+    </div>
+
+    <div id="sellersContent" class="feature-content">
+      <h3>Optimized statistics interface</h3>
+      <p>Our priority was to make the dashboard as simple and aesthetically pleasing as possible. Our interface now offers a smooth and intuitive user experience.</p>
+
+      <h3>Republish your articles</h3>
+      <p>No need to use external software or do it manually. You can repost your articles with one click, without any risk of shadowbanning and without retouching your original images.</p>
+
+      <h3>Integrated messaging</h3>
+      <p>We provide you with access to an integrated messaging system that allows you to centralize all messages from your various accounts. You can set up automatic responses for buyers and sellers.</p>
+    </div>
+
+    <div id="buyersContent" class="feature-content d-none">
+      <h3>Repost detection</h3>
+      <p>Detect reposts and automatically avoid them with AutoCop so you can focus only on the best and most recent articles. Only on SwiftCop!</p>
+
+      <h3>Fastest Auto Purchase</h3>
+      <p>Our system features the fastest Autobuy and Autocop system ever, and that's nothing new! We have a success rate of up to 98% on Sniper.</p>
+
+      <h3>Save and purchase once processed</h3>
+      <p>You can't purchase items that are in progress, so we offer a queue that automatically purchases items you add once they're verified.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-dark text-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <!-- Performance Plan -->
+            <div class="col-lg-3 col-md-4 mb-0" style="padding-right: 0; margin-right: -1px;">
+                <div class="card text-center border-dark bg-black" style="height: 400px;">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #0ea686;">Performance</h3>
+                        <p class="card-text text-white">For the experienced</p>
+                        <h4 class="text-white">€29.99 / month</h4>
+                        <ul class="list-unstyled text-center">
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span class="text-white">✔</span> Access to CRM</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span class="text-white">✔</span> One-click purchase</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span class="text-white">✔</span> Link 1 Vinted account</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span class="text-white">✔</span> Unlimited filters</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span class="text-danger">✘</span> Integrated messaging</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span class="text-danger">✘</span> Autocopy</li>
+                        </ul>
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-light ">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Plan (Highlighted) -->
+            <div class="col-lg-3 col-md-4 mb-0" style="z-index: 1; padding-left: 0; padding-right: 0;">
+                <div class="card text-center border-success shadow-lg bg-black" style="height: 450px;">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #0ea686;">Advanced</h3>
+                        <p class="card-text text-white">For experts</p>
+                        <h4 class="text-white">€79.99 / month</h4>
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-light ">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <br>
+                        <ul class="list-unstyled text-center">
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> All "Performance" features</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Access to the Vinted account generator</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Second fastest Autocop</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Link up to 10 Vinted accounts</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Integrated messaging system</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Automatically purchase items once they are checked out</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sniper Plan -->
+            <div class="col-lg-3 col-md-4 mb-0" style="padding-left: 0; margin-left: -1px;">
+                <div class="card text-center border-dark bg-black" style="height: 400px;">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #0ea686;">Sniper</h3>
+                        <p class="card-text text-white">For professionals</p>
+                        <h4 class="text-white">€ / month</h4>
+                        <ul class="list-unstyled text-center">
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> The "Advanced" features</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Sniper (Fastest Autocop)</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: #0ea686;">✔</span> Link unlimited accounts</li>
+                            <li class="text-white" style="font-size: 14px!important; margin-bottom: 10px;"><span style="color: red;">✘</span> Generate unlimited Vinted accounts</li>
+                            <br>
+                            <br>
+                        </ul>
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-light ">Join the Waitlist <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Text & Stats -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold display-5 mb-3">
+          +€1,436,148 worth of items<br>purchased through SwiftCop in August.
+        </h2>
+        <p class="text-muted mb-4">
+          Don’t let your competitors overtake you; join SwiftCop.<br>
+          Whether you're a beginner or a professional, our tool will adapt to your needs.
+        </p>
+        <a href="#" class="btn btn-success btn-lg px-4 py-2 mb-4" style="background: linear-gradient(90deg, #00f7c4, #00d19a); border: none; color: black;">
+          Join SwiftCop &nbsp; →
+        </a>
+
+        <!-- Stats -->
+        <div class="d-flex flex-wrap gap-4 mt-4">
+          <div>
+            <h4 class="text-success fw-bold counter" data-target="12997" style="padding-right:15px;">0</h4>
+            <p class="text-white mb-0 small">Members</p>
+          </div>
+          <div>
+            <h4 class="text-success fw-bold counter" data-target="2000" style="padding-right:15px;">0</h4>
+            <p class="text-white mb-0 small">Cops per day</p>
+          </div>
+          <div>
+            <h4 class="text-success fw-bold counter" data-target="98" data-suffix="%" style="padding-right:15px;">0</h4>
+            <p class="text-white mb-0 small">Average success rate</p>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-lg-6 text-center d-flex justify-content-center align-items-center">
+      <img
+        src="https://framerusercontent.com/images/8LAV8YtQPsZjxyTG0siTDBa0qY.png?scale-down-to=2048"
+        alt="SwiftCop dashboard"
+        class="img-fluid"
+        style="
+          transform: rotate(-3deg) scale(1.2);
+          max-width: 110%;
+          border-radius: 1rem;
+          box-shadow: 0 0 30px rgba(0, 255, 150, 0.2);
+          transition: transform 0.3s ease;
+        "
+      >
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="container py-5 text-white" style="background-color: #111;">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <h2 class="fw-bold">Do you have any other questions?</h2>
+            <p>Questions not covered here? Join our Discord and open a ticket!</p>
+        </div>
+
+        <div class="col-md-6">
+            <div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item bg-dark text-white border-0">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Why is SwiftCop faster than any other bot?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            SwiftCop uses a technology that we have kept secret from the beginning, no one uses it on the market and we will know if they do!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-dark text-white border-0 mt-2">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            What is the difference between Sniper & AutoCop
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The Sniper is the fastest AutoCop ever, the AutoCop is the same as the Sniper but priority is always given to an AutoCop member if a Sniper and AutoCop member want the same item.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-dark text-white border-0 mt-2">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Does AutoReposts Shadowban my posts?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, we are the only bot that offers a Shadowban bypass solution that does not affect your images, your images will remain the same, but your post will be as good as new!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-dark text-white border-0 mt-2">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            Will this get my Vinted account banned?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, and if you're worried about your Vinted account, you can generate a brand new one using our Vinted account generator! You can use it without having to pay for a phone number.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left Side: Logo & Text -->
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center mb-2">
+                        <strong>SwiftCop</strong>
+                    </div>
+                    <small>The fastest bot on the market.</small>
+                </div>
+            </div>
+
+            <!-- Center Navigation Links -->
+            <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
+                <nav class="d-flex gap-3">
+                    <a href="#" class="text-white text-decoration-none">How it works</a>
+                    <a href="#" class="text-white text-decoration-none">Features</a>
+                    <a href="#" class="text-white text-decoration-none">Price</a>
+                    <a href="#" class="text-white text-decoration-none">FAQ</a>
+                </nav>
+            </div>
+
+            <!-- Right Social Icons -->
+            <div class="col-md-4 d-flex justify-content-end align-items-center gap-3">
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-tiktok"></i>
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-x"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <small>All rights reserved SwiftCop by Venture Inc.</small>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end gap-3">
+                <a href="#" class="text-white text-decoration-none"><small>Legal Notices</small></a>
+                <a href="#" class="text-white text-decoration-none"><small>General Conditions</small></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script>
   const faders = document.querySelectorAll('.fade-in');
 
@@ -750,6 +1271,44 @@
 
   faders.forEach(fader => {
     appearOnScroll.observe(fader);
+  });
+
+    const counters = document.querySelectorAll(".counter");
+  let hasAnimated = false;
+
+  const animateCounter = (el) => {
+    const target = +el.getAttribute("data-target");
+    const suffix = el.getAttribute("data-suffix") || "+";
+    let count = 0;
+    const duration = 2000;
+    const stepTime = Math.max(Math.floor(duration / target), 20);
+
+    const updateCount = () => {
+      count += Math.ceil(target / (duration / stepTime));
+      if (count < target) {
+        el.innerText = count.toLocaleString() + suffix;
+        setTimeout(updateCount, stepTime);
+      } else {
+        el.innerText = target.toLocaleString() + suffix;
+      }
+    };
+
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimated) {
+        counters.forEach(counter => animateCounter(counter));
+        hasAnimated = true;
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  counters.forEach(counter => {
+    observer.observe(counter);
   });
 </script>
 
