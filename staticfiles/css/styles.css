@@ -853,7 +853,7 @@
   left: 3px;
   width: calc(50% - 6px);
   height: 32px;
-  background-color: #fff;
+  background-color: #ff0000;
   border-radius: 999px;
   transition: left 0.3s ease;
   z-index: 1;
