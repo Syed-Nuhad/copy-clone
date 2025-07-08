@@ -39,8 +39,8 @@
 </nav>
 
 <!-- Hero Section -->
-<header class="bg-black">
-  <div class="container bg-black hero-container fade-in">
+<header class="bg-dark">
+  <div class="container bg-dark hero-container fade-in">
     <div class="hero-text">
       <h1>The ultimate tool for Vinted reselling</h1>
       <p>Save time, make money, and automate your sales with our intelligent platform.</p>
@@ -55,7 +55,7 @@
   </div>
 </header>
 
-<section class="how-it-works bg-black fade-in">
+<section class="how-it-works bg-dark fade-in">
   <div class="container">
     <h2 class="section-title">How does it work?</h2>
     <div class="steps">
@@ -89,7 +89,7 @@
 
 
 <!-- Community Section (Side-by-Side) -->
-<section class="community-section bg-black fade-in">
+<section class="community-section bg-dark fade-in">
   <div class="container">
     <div class="community-row">
 
@@ -120,7 +120,7 @@
   </div>
 </section>
 
-<section class="sniper-section fade-in">
+<section class="sniper-section bg-dark fade-in">
   <div class="container sniper-wrapper">
 
     <!-- Left: Text -->
@@ -142,43 +142,53 @@
   </div>
 </section>
 
-<section class="features-section py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Discover Our Features</h2>
+<div class="x15-toggle-container bg-dark">
+  <div class="x15-role-toggle">
+    <button id="x15-seller-btn" class="x15-role-btn active">Sellers</button>
+    <button id="x15-buyer-btn" class="x15-role-btn">Buyers</button>
+  </div>
 
-    <div class="uxr-toggle-x927">
-      <input type="radio" id="uxr-role-seller" name="uxr-role" class="uxr-radio-hidden" checked>
-      <input type="radio" id="uxr-role-buyer" name="uxr-role" class="uxr-radio-hidden">
+  <h2 class="x15-heading text-white">It's not just a Vinted bot.</h2>
 
-      <div class="uxr-slider-x927"></div>
-
-      <label for="uxr-role-seller" class="uxr-label-x927">Sellers</label>
-      <label for="uxr-role-buyer" class="uxr-label-x927">Buyers</label>
+  <!-- Seller Features -->
+  <div id="x15-seller-content" class="x15-feature-section">
+    <div class="x15-feature-card">
+      <div class="x15-icon"><i class="fa-solid fa-chart-simple"></i></div>
+      <h3 class="text-white">Optimized statistics interface</h3>
+      <p>Our priority was to make the dashboard as simple and aesthetically pleasing as possible. Now, our interface offers a smooth and intuitive user experience.</p>
     </div>
-
-    <div id="sellersContent" class="feature-content">
-      <h3>Optimized statistics interface</h3>
-      <p>Our priority was to make the dashboard as simple and aesthetically pleasing as possible. Our interface now offers a smooth and intuitive user experience.</p>
-
-      <h3>Republish your articles</h3>
+    <div class="x15-feature-card">
+      <div class="x15-icon"><i class="fa-solid fa-share"></i></div>
+      <h3 class="text-white">Republish your articles</h3>
       <p>No need to use external software or do it manually. You can repost your articles with one click, without any risk of shadowbanning and without retouching your original images.</p>
-
-      <h3>Integrated messaging</h3>
+    </div>
+    <div class="x15-feature-card">
+      <div class="x15-icon"><i class="fa-solid fa-lock"></i></div>
+      <h3 class="text-white">Integrated messaging</h3>
       <p>We provide you with access to an integrated messaging system that allows you to centralize all messages from your various accounts. You can set up automatic responses for buyers and sellers.</p>
     </div>
+  </div>
 
-    <div id="buyersContent" class="feature-content d-none">
-      <h3>Repost detection</h3>
-      <p>Detect reposts and automatically avoid them with AutoCop so you can focus only on the best and most recent articles. Only on SwiftCop!</p>
-
-      <h3>Fastest Auto Purchase</h3>
+  <!-- Buyer Features -->
+  <div id="x15-buyer-content" class="x15-feature-section hidden">
+    <div class="x15-feature-card">
+      <div class="x15-icon"><i class="fa-solid fa-user-secret"></i></div>
+      <h3 class="text-white">Repost detection</h3>
+      <p>Detect reposts and automatically avoid them with AutoCop so you can focus only on the best and most recent articles. Only on V-tools!</p>
+    </div>
+    <div class="x15-feature-card">
+      <div class="x15-icon"><i class="fa-solid fa-bolt"></i></div>
+      <h3 class="text-white">Fastest Auto Purchase</h3>
       <p>Our system features the fastest Autobuy and Autocop system ever, and that's nothing new! We have a success rate of up to 98% on Sniper.</p>
-
-      <h3>Save and purchase once processed</h3>
+    </div>
+    <div class="x15-feature-card">
+      <div class="x15-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+      <h3 class="text-white">Save and purchase once processed</h3>
       <p>You can't purchase items that are in progress, so we offer a queue that automatically purchases items you add once they're verified.</p>
     </div>
   </div>
-</section>
+</div>
+
 
 <section class="py-5 bg-dark text-light">
     <div class="container py-5">
@@ -307,74 +317,54 @@
   </div>
 </section>
 
-<div class="container py-5 text-white" style="background-color: #111;">
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <h2 class="fw-bold">Do you have any other questions?</h2>
-            <p>Questions not covered here? Join our Discord and open a ticket!</p>
-        </div>
 
-        <div class="col-md-6">
-            <div class="accordion" id="faqAccordion">
+<section class="bg-dark" style="background-color: #111;">
+  <div class="container py-5 text-white">
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+      <div class="col-md-6 mb-4" style="flex: 1 1 50%; padding-right: 20px;">
+        <h2 class="fw-bold">Do you have any other questions?</h2>
+        <p>Questions not covered here? Join our Discord and open a ticket!</p>
+      </div>
 
-                <div class="accordion-item bg-dark text-white border-0">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                            Why is SwiftCop faster than any other bot?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            SwiftCop uses a technology that we have kept secret from the beginning, no one uses it on the market and we will know if they do!
-                        </div>
-                    </div>
-                </div>
+      <div class="col-md-6" style="flex: 1 1 50%;">
+        <div class="accordion-custom" id="faqAccordion">
 
-                <div class="accordion-item bg-dark text-white border-0 mt-2">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                            What is the difference between Sniper & AutoCop
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The Sniper is the fastest AutoCop ever, the AutoCop is the same as the Sniper but priority is always given to an AutoCop member if a Sniper and AutoCop member want the same item.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item bg-dark text-white border-0 mt-2">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                            Does AutoReposts Shadowban my posts?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No, we are the only bot that offers a Shadowban bypass solution that does not affect your images, your images will remain the same, but your post will be as good as new!
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item bg-dark text-white border-0 mt-2">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                            Will this get my Vinted account banned?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No, and if you're worried about your Vinted account, you can generate a brand new one using our Vinted account generator! You can use it without having to pay for a phone number.
-                        </div>
-                    </div>
-                </div>
-
+          <div class="accordion-item">
+            <button class="accordion-header">Why is SwiftCop faster than any other bot?</button>
+            <div class="accordion-body">
+              SwiftCop uses a technology that we have kept secret from the beginning, no one uses it on the market and we will know if they do!
             </div>
-        </div>
-    </div>
-</div>
+          </div>
 
-<footer class="bg-dark text-white py-4">
+          <div class="accordion-item">
+            <button class="accordion-header">What is the difference between Sniper & AutoCop</button>
+            <div class="accordion-body">
+              The Sniper is the fastest AutoCop ever, the AutoCop is the same as the Sniper but priority is always given to an AutoCop member if a Sniper and AutoCop member want the same item.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">Does AutoReposts Shadowban my posts?</button>
+            <div class="accordion-body">
+              No, we are the only bot that offers a Shadowban bypass solution that does not affect your images, your images will remain the same, but your post will be as good as new!
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">Will this get my Vinted account banned?</button>
+            <div class="accordion-body">
+              No, and if you're worried about your Vinted account, you can generate a brand new one using our Vinted account generator! You can use it without having to pay for a phone number.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-black text-white py-4">
     <div class="container">
         <div class="row align-items-center">
 
@@ -484,6 +474,42 @@
   counters.forEach(counter => {
     observer.observe(counter);
   });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sellerBtn = document.getElementById("x15-seller-btn");
+  const buyerBtn = document.getElementById("x15-buyer-btn");
+  const sellerContent = document.getElementById("x15-seller-content");
+  const buyerContent = document.getElementById("x15-buyer-content");
+
+  sellerBtn.addEventListener("click", () => {
+    sellerBtn.classList.add("active");
+    buyerBtn.classList.remove("active");
+    sellerContent.classList.remove("hidden");
+    buyerContent.classList.add("hidden");
+  });
+
+  buyerBtn.addEventListener("click", () => {
+    buyerBtn.classList.add("active");
+    sellerBtn.classList.remove("active");
+    buyerContent.classList.remove("hidden");
+    sellerContent.classList.add("hidden");
+  });
+});
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const accordion = item.parentElement;
+
+        // Close all other items
+        accordion.querySelectorAll('.accordion-item').forEach(i => {
+          if (i !== item) i.classList.remove('active');
+        });
+
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
 </script>
 
 
